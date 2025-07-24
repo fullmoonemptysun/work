@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9e61ebaf780c84cb",
@@ -169,7 +170,7 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "b3de7fd93bf86786",
+  "active": "fad6b2d5656d8a10",
   "lastOpenFiles": [
     "OSS Kernel/Kselftests.md",
     "Research-VIRTIOBottleneck/KVM QEMU and Virtualization.md",

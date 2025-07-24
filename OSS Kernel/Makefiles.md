@@ -108,3 +108,123 @@ clean:
 ---
 # Targets
 ## The all target
+- can be used ensure multiple targets run on `make` 
+```
+all : one two three
+
+one:
+	touch one
+two:
+	touch two
+three:
+	touch three
+
+clean:
+	rm -f one two three
+```
+
+## Multiple targets
+- if multiple targets specified, commands will run for each of them:
+```
+all : f1.o f2.o
+
+f1.o f2.o:
+	echo $@
+
+```
+$@ is variable that contains the target name.
+
+
+# Automatic Variables and Wildcards
+
+## * Wildcard
+
+- * % are wild cards
+- * searches file system for matching filenames. Should be used in a wildcard function always because if used by itself, if there are no matches it is left as * only
+
+```
+thing_wrong := *.o (don't do this)
+thing_right := $(wildcard *.o) (do this)
+
+all : one two three four
+
+#fails because $(thing_wrong) is the string "*.o" (* not expanded)
+one: $(thing_wrong)
+
+#stays as *.o if there are no files that match this pattern.
+two : *.o
+
+#works right
+three: $(thing_right)
+
+#works right also
+four: $(wildcard *.o)
+```
+
+## % Wildcard
+
+- useful but confusing
+- when used in 'matching mode' replaces one or more characters in a string. This match is called the stem.
+- when used in replacing mode, it takes the stem that was matched and replaces that in a string.
+#coverthismorelater
+
+
+## Automatic variables
+```
+hey: one two
+
+# Outputs "hey", since this is the target name
+echo $@
+
+# Outputs all prerequisites newer than the target
+echo $?
+
+# Outputs all prerequisites
+echo $^
+
+# Outputs the first prerequisite
+echo $<
+
+touch hey
+
+one:
+touch one
+
+two:
+touch two
+
+clean:
+rm -f hey one two
+```
+
+# Fancy rules
+## Implicit rules
+- There are some automatic rules that Make has when compiling C code.
+
+- Compiling a C program: n.o is made automatically from n.c with a command of the form $(CC) -c $(CPPFLAGS) $(CFLAGS) $^ -o $@
+- - Compiling a C++ program: `n.o` is made automatically from `n.cc` or `n.cpp` with a command of the form `$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $^ -o $@`
+- - Linking a single object file: `n` is made automatically from `n.o` by running the command `$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@`
+
+The important variables used by implicit rules are:
+- `CC`: Program for compiling C programs; default `cc`
+- `CXX`: Program for compiling C++ programs; default `g++`
+- `CFLAGS`: Extra flags to give to the C compiler
+- `CXXFLAGS`: Extra flags to give to the C++ compiler
+- `CPPFLAGS`: Extra flags to give to the C preprocessor
+- `LDFLAGS`: Extra flags to give to compilers when they are supposed to invoke the linker
+
+example:
+```
+CC = gcc
+CFLAGS = -g
+
+blah:blah.o
+
+blah.c:
+	echo "#include <stdio.h> \n int main(){printf("hello world"); return 0;}" > blah.c
+
+clean:
+	rm -f blah*
+```
+
+## Static pattern Rules
