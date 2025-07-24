@@ -169,7 +169,7 @@ four: $(wildcard *.o)
 
 
 ## Automatic variables
-```
+```make
 hey: one two
 
 # Outputs "hey", since this is the target name
@@ -213,7 +213,7 @@ The important variables used by implicit rules are:
 - `LDFLAGS`: Extra flags to give to compilers when they are supposed to invoke the linker
 
 example:
-```
+```make
 CC = gcc
 CFLAGS = -g
 
