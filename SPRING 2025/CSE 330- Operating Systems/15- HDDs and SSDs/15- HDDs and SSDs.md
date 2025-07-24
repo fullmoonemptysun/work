@@ -1,0 +1,1 @@
+![[15_(Device_example_HDDs_and_SSDs).pdf]]
