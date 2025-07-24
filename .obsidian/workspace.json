@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9e61ebaf780c84cb",
@@ -172,16 +171,17 @@
   },
   "active": "fad6b2d5656d8a10",
   "lastOpenFiles": [
+    "OSS Kernel/Linux Kernel Sources.md",
     "OSS Kernel/Kselftests.md",
+    "OSS Kernel/GIT Book Notes.md",
+    "OSS Kernel/Makefiles.md",
     "Research-VIRTIOBottleneck/KVM QEMU and Virtualization.md",
     "Research-VIRTIOBottleneck/VirtIO.md",
     "Operating Systems and Kernels/Process loading and translation summary.md",
     "Operating Systems and Kernels/Chapter 2.md",
     "Operating Systems and Kernels/Operating Systems and Kernels.md",
     "Operating Systems and Kernels/Session 1.md",
-    "OSS Kernel/Makefiles.md",
     "Pasted image 20250723201146.png",
-    "OSS Kernel/Linux Kernel Sources.md",
     "ANDROID 101/APIs and Backend Stuff.md",
     "ANDROID 101/ANDROID 101.md",
     "ANDROID 101/Week 3.md",
@@ -191,7 +191,6 @@
     "DSA/Chapter 2/Chapter 2.md",
     "TECH INTERVIEW PREP CODE/Neetcode 150/Unit 1- Arrays and Hashing.md",
     "TECH INTERVIEW PREP CODE/Neetcode 150/Neetcode 150.md",
-    "OSS Kernel/GIT Book Notes.md",
     "QUANT HFT/PHASE 1/CPP DEEP DIVE/Chapter  2.md",
     "TECH INTERVIEW PREP CODE/Neetcode 150/PYTHON NOTES.md",
     "Pasted image 20250708092657.png",

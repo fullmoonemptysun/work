@@ -20,7 +20,7 @@ hello:
 ## Syntax
 - Set of rules
 - 1 rule looks like:
-```
+```make
 targets: prerequisites 
 	command 
 	command 
@@ -32,10 +32,9 @@ targets: prerequisites
 
 ## Essence of Make
 
-```hello:
-
+```make
+hello:
 	echo "Hello, World"
-
 	echo "This line will print if the file hello does not exist"
 ```
 - target: hello
@@ -48,14 +47,14 @@ targets: prerequisites
 >Can provide cmd line args to make to select the first target. By default this is the first target in the file.
 
 - when we do:
-```
+```make
 blah:
 	gcc blah.c -o blah
 ```
 This will create a blah file if it doesn't exist by executing that command. But when we try to rerun make after a change it will say "make: 'blah' is up to date" and not recompile it.
 
 To solve this, we do:
-```
+```make
 blah:blah.c
 	gcc blah.c -o blah
 ```
@@ -65,7 +64,7 @@ Now make will only run if blah does not exist OR ***blah.c is newer than blah***
 - uses the fs timestamps to make this decision.
 
 
-```
+```make
 some_file: other_file echo 
 	"This will always run, and runs second" 
 	touch some_file 
@@ -75,7 +74,7 @@ other_file:
 Both run because other_file is never created
 ## Make Clean 
 Used to remove a file/target created
-```
+```make
 some_file:
 	touch some_file
 
@@ -89,7 +88,7 @@ clean will never run until specified as a target in cmdline. (only the first eve
 - use := for assignment
 - $(var) or ${} for expansion
 
-```
+```make
 files := file1 file2
 some_file: $(files)
 	echo "look at this variable: " $(files)
@@ -109,7 +108,7 @@ clean:
 # Targets
 ## The all target
 - can be used ensure multiple targets run on `make` 
-```
+```make
 all : one two three
 
 one:
@@ -125,7 +124,7 @@ clean:
 
 ## Multiple targets
 - if multiple targets specified, commands will run for each of them:
-```
+```make
 all : f1.o f2.o
 
 f1.o f2.o:
@@ -142,7 +141,7 @@ $@ is variable that contains the target name.
 - * % are wild cards
 - * searches file system for matching filenames. Should be used in a wildcard function always because if used by itself, if there are no matches it is left as * only
 
-```
+```make
 thing_wrong := *.o (don't do this)
 thing_right := $(wildcard *.o) (do this)
 
