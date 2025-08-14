@@ -104,7 +104,7 @@ Remove a file.
 
 # 1.2 I/O and file descriptors
 
-1. File descriptor is an integer representing a kernel managed object that a process may read from or write to.
+1. File descriptor is an integer representing a kernel managed object(not a region in the memory) that a process may read from or write to.
 2. A file descriptor can represent a file, a directory, a device, etc.
 3. This is basically a struct instance under the hood with many fields.
 4. File descriptors basically abstracts away the differences between files, devices and pipes, making them all look like streams of bytes.

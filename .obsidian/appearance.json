@@ -1,6 +1,7 @@
 {
-  "theme": "moonstone",
+  "theme": "obsidian",
   "accentColor": "#6b9cff",
   "baseFontSize": 24,
-  "showRibbon": false
+  "showRibbon": false,
+  "cssTheme": "Obsidianite"
 }
