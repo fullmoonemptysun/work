@@ -16,8 +16,7 @@
   
 
 1. Multi core processor:  
-      
-    
+
 
 ![[image 1 7.png|image 1 7.png]]
 
@@ -92,7 +91,7 @@
 
 - rax is the latest evolution of 64 bit
 - al, ah would be the primitve ones, 8 bit registers
-- eax is 16bits
+- ax is 16bits
 - We can still access these smaller units
 
   
@@ -628,6 +627,8 @@ syscall
 
 ![[image 45.png]]
 
+Conditional jumps (`jb`, `je`, `jne`, `jg`, etc.) are always **RIP-relative with an immediate displacement**.
+This means they will only take a immediate value offset from the rip address, not registers, not memory accesses.
   
 
 and then we have loops:

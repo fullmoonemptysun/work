@@ -113,7 +113,7 @@ Remove a file.
 
 1. Xv6 uses fd as indices in per process fd table. So every process basically has their own fds starting from 0.
 2. Conventionally, a process reads from fd = 0. (stdin), writes to fd=1 (stdout) and writes error messages to fd = 2 (stderr).
-3. These 3 are created by default as a routine by the OS before the process is actuall run.
+3. These 3 are created by default as a routine by the OS before the process is actually run.
 4. The shell ensures that it always has three file descriptors open (user/sh.c:152)
 5. `read` and `write` syscalls read and write bytes from and to open files named by fds
 

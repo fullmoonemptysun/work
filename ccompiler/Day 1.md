@@ -33,3 +33,11 @@
 10. The **linker** also associates each entry in the symbol table with a memory address through a process called *symbol resolution*. Then it performs *relocation* which updates every place that uses a symbol to use the corresponding address instead. (simplified).
 
 
+## The compiler Driver
+
+1. `gcc` is the compiler driver that calls the pp, compiler, assembler and the linker.
+2. We write the compiler driver before we get to the compiler. We use the preprocessor in our system.
+`gcc -E -P INPUT_FILE -o PREPROCESSED_FILE`
+
+
+
