@@ -85,41 +85,42 @@
 
   
 
-1. We need the <cstdint> library to get generic unsigned 8, 16, 64, 32 bit int types.
+2. We need the `<cstdint>` library to get generic unsigned 8, 16, 64, 32 bit int types.
 
   
 
-1. We declare everything in the header file and implement everything in the cpp file
+3. We declare everything in the header file and implement everything in the cpp file
 
   
 
-1. We create a bus class, and a CPU class that will work together. The ram was implemented as an array with 8bit ints (data) and the bus has members:
+4. We create a bus class, and a CPU class that will work together. The ram was implemented as an array with 8bit ints (data) and the bus has members:
     1. Read method, write method
     2. Devices: RAM, CPU
 
   
 
-1. **Forward declaring a class before another class in a file vs. including the header file:**
+5. **Forward declaring a class before another class in a file vs. including the header file:**
     
     1. Forward declaration only tells the compiler that a class exists. Nothing else about the class’s members is known
     2. including header files basically brings the whole implementation.
     3. No need for forward declaration if already including.
     4. We did the forward declaration in the header file, because we did not include anything in there. That way, when we use the bus in the cpu header file, it will understand that it is a class. The implementaion can be found in the cpp file.
     
-    > [!important] **THIS ALSO PREVENTS CIRCULAR INCLUSION**<br><br>In C/C++, circular inclusions refer to a situation where two or more header files include each other directly or indirectly, leading to a loop. This can cause compilation errors, as the compiler ends up trying to repeatedly process the same files.<br>
+> [!important] **THIS ALSO PREVENTS CIRCULAR INCLUSION**
+> In C/C++, circular inclusions refer to a situation where two or more header files include each other directly or indirectly, leading to a loop. This can cause compilation errors, as the compiler ends up trying to repeatedly process the same files.
     
 
   
 
-1. The status register(flags) is implemented as an enum with each flag corresponding to some significant bit in a bitmask: bunch of bits where each corresponds to a flag.
+6. The status register(flags) is implemented as an enum with each flag corresponding to some significant bit in a bitmask: bunch of bits where each corresponds to a flag.
     
       
     
-2. CPU parameters are the registers, pc and stack pointer.
+7. CPU parameters are the registers, pc and stack pointer.
 
   
 
-1. Methods for instructions include include:
+8. Methods for instructions include include:
 
 - Methods to set and get flags
 - Methods to implement addressing mode
