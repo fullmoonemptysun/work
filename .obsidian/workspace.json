@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Full Stack/Part 1/Introduction to React.md",
+                "file": "Full Stack/Part 1/Component state, event handlers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introduction to React"
+              "title": "Component state, event handlers"
             }
           }
         ]
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Full Stack/Part 1/Introduction to React.md",
+                "file": "Full Stack/Part 1/Component state, event handlers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Introduction to React"
+              "title": "Backlinks for Component state, event handlers"
             }
           },
           {
@@ -173,9 +173,11 @@
   },
   "active": "d7e1d47d15f27884",
   "lastOpenFiles": [
+    "Full Stack/Part 1/Introduction to React.md",
+    "Full Stack/Part 1/Javascript.md",
+    "Full Stack/Part 1/Component state, event handlers.md",
     "Pasted image 20251219125830.png",
     "Full Stack/Part 0/Part 0 Complete.md",
-    "Full Stack/Part 1/Introduction to React.md",
     "Full Stack/Part 1",
     "Full Stack/Part 0",
     "Pasted image 20251216164023.png",
@@ -208,7 +210,6 @@
     "OSS Kernel/Makefiles.md",
     "OSS Kernel/Linux Kernel Sources.md",
     "OSS Kernel/Kselftests.md",
-    "Pasted image 20250723201146.png",
     "SYSTEMS MASTER/heheOS/OS 0 to 1.md",
     "Untitled.md",
     "Untitled 1.md",
@@ -216,7 +217,6 @@
     "Systems Security/PREREQs/GDB.md",
     "TECH INTERVIEW PREP CODE/Neetcode 150/Unit 1- Arrays and Hashing.md",
     "TECH INTERVIEW PREP CODE/Neetcode 150/Neetcode 150.md",
-    "DSA/Chapter 2/Chapter 2.md",
     "Systems Security/PREREQs",
     "Systems Security"
   ]

@@ -170,3 +170,95 @@ const Hello = () => {
 3. A strong convention is that `App` is usually the root component. However this is not always true and will be explored in Part6
 
 ## Props: Passing data to components
+1. We can pass data to components using something called props like:
+```jsx
+const Hello = (props) => {  return (
+    <div>
+      <p>Hello {props.name}</p>    
+    </div>
+  )
+}
+```
+
+2. The props will be defined in jsx as:
+```jsx
+const App = () => {
+  return (
+    <div>
+      <h1>Greetings</h1>
+      <Hello name='George' />      
+      <Hello name='Daisy' />    
+      </div>
+  )
+}
+```
+
+3. Can have multiple props which can also be dynamic like :
+```jsx
+const Hello = (props) => {
+  console.log(props)  return (
+    <div>
+      <p>
+        Hello {props.name}, you are {props.age} years old   </p>
+    </div>
+  )
+}
+
+const App = () => {
+  const name = 'Peter'  const age = 10
+  return (
+    <div>
+      <h1>Greetings</h1>
+      <Hello name='Maya' age={26 + 10} />      
+      <Hello name={name} age={age} />    
+    </div>
+  )
+}
+```
+
+## Misc. Notes on React
+1. Component names must be capitalized. Names starting with lowecase letters will be rendered as normal html elements rather than components. 
+
+2. The content of a React component must contain at least one root element. If we did not have a div in the above component code, it would cause an error. 
+Or,
+```js
+const App = () => {
+  return [
+    <h1>Greetings</h1>,
+    <Hello name='Maya' age={26 + 10} />,
+    <Footer />
+  ]
+}
+```
+an array of components is also a valid option but is kinda ugly
+
+
+3. If we don't want too many divs in the DOM because of this root rule, we can use fragments like:
+   ```jsx
+const App = () => {
+  const name = 'Peter'
+  const age = 10
+
+  return (
+    <>
+      <h1>Greetings</h1>
+      <Hello name='Maya' age={26 + 10} />
+      <Hello name={name} age={age} />
+      <Footer />
+    </>
+  )
+}
+```
+wrapping the elements to be returned by the component with an empty element.
+
+>[!Warning]
+>Do not render objects directly. They are not valid react children.
+>- Individual things to be rendered inside curly braces must be primitive values, such as numbers or strings.
+>- Can still render arrays if they contain primitve stuff that can be rendered otherwise.
+
+---
+
+
+
+
+
