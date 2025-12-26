@@ -128,4 +128,132 @@ export default App
 - When setTimeout is called, it is called with 1 and then it calls setter with 1 + 1  = 2 and so on and so forth.
 
 
-3. 
+## Event Handling
+
+A simple clicker application
+```jsx
+const App = () => {
+  const [ counter, setCounter ] = useState(0)
+
+  return (
+    <div>
+      <div>{counter}</div>
+      <button onClick={() => setCounter(counter + 1)}>
+        plus
+      </button>
+      <button onClick={() => setCounter(0)}>zero      </button>    </div>
+  )
+}
+```
+
+1. an event handler always needs to be a function or a function reference. it cannot be a function call, i.e, if a function is called upon and event, that function call should be made inside the event handler function. The function call cannot be the event handler function itself.
+
+
+## Passing State - to child  components
+1. *React components should be small and modular and reusable across the app and even different projects*. Let's refactor our application to follow this rule
+`The official documentation says to lift the state up` which means to put the state in the top component and pass it down.
+
+```jsx
+const Display = (props) => {
+return (
+<div>{props.counter}</div>
+)}
+
+
+const App = () => {
+  const [ counter, setCounter ] = useState(0)
+
+  const increaseByOne = () => setCounter(counter + 1)
+  const setToZero = () => setCounter(0)
+
+  return (
+    <div>
+      <Display counter={counter}/>      <button onClick={increaseByOne}>
+        plus
+      </button>
+      <button onClick={setToZero}> 
+        zero
+      </button>
+    </div>
+  )
+}
+
+```
+
+2. When the buttons are clicked and `App` is rerendered, all its children are also re rendered.
+
+Let's make the components more modular:
+```jsx
+const Button = (props) =>{
+return (
+<button onClick ={props.onClick}>
+	{props.text}
+</button>
+)}
+```
+and finally it looks something like this:
+
+```jsx
+import {useState} from 'react'
+
+const Display = ({counter}) => <div className="text-center">{counter}</div>;
+
+const ButtonGroup = ({addButtonProps, resetButtonProps}) => {
+    return (
+        <div className=" flex gap-3 items-center justify-center">
+        <Button  text={addButtonProps.text}  onClick = {addButtonProps.onClick}
+        ></Button>
+
+        <Button onClick = {resetButtonProps.onClick}text = {resetButtonProps.text}></Button>
+
+        </div>
+    )
+
+}
+    
+const Button = ({onClick, text}) => {
+    return (
+        <button className="font-bold border rounded-lg px-6 p-1" onClick={onClick}>
+            {text}
+        </button>
+    )
+}
+
+const App = () => {
+    const [counter, setCounter] = useState(0)
+
+    const handleClick = () => {
+        console.log('clicked')
+        setCounter(counter + 1);
+
+    }
+
+    const handleReset = () => {
+        setCounter(0)
+    }
+
+    return (
+        <>
+        <Display counter = {counter}></Display>
+    
+        <ButtonGroup addButtonProps={{onClick: handleClick, text: "Add"}} resetButtonProps={{onClick: handleReset, text: "Reset"}}/>
+
+        </>
+        
+    )
+}
+
+export default App
+
+```
+
+>[!Important] The main point
+>- **Calling a function that changes the state causes the component to re-render.**
+>- This change must be done through the setter function returned by `useState()` 
+>- All the subcomponents get re-rendered as well.
+
+## Refactoring the components
+
+
+
+
