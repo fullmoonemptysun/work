@@ -15,29 +15,20 @@ struct name{
 }
 ```
 
-  
 
 1. The number of bits can be more than the member’s type’s default size.
 
-  
+2. Cannot have pointers to bit fields or references (&) **because they might not start at a byte boundary.**
 
-1. Cannot have pointers to bit fields or references (&) **because they might not start at a byte boundary.**
-
-  
-
-1. Uses:
+3. Uses:
     - Memory optimization: uses less memory
     - Compress structs and data for easy transfer over network
     - In graphics applications, color components, pixel formats, and image data often have specific bit requirements which can be customized using bit fields.
 
-  
 
 ## Unions
 
 1. Same as structs, only difference is that all the members share the same memory location, instead of being assigned dedicated memory locations for each.
-    
-      
-    
     Example: Say we have the following struct:
     
     ```C++

@@ -12,6 +12,7 @@
 
 
 
+
 ![[image 56.png|image 56.png]]
 
   
@@ -113,21 +114,14 @@
   
 
 6. The status register(flags) is implemented as an enum with each flag corresponding to some significant bit in a bitmask: bunch of bits where each corresponds to a flag.
-    
-      
-    
+
 7. CPU parameters are the registers, pc and stack pointer.
-
-  
-
 8. Methods for instructions include include:
-
 - Methods to set and get flags
 - Methods to implement addressing mode
 - Methods for the instructions themselves.
 
   
-
 $$
 1. For the flag enums, we do C = (1 <shiftrightshiftright>  0) and not C = 0b0001 for accuracy and readability.
 $$
@@ -137,28 +131,22 @@ $$
 2. **DECIMAL MODE:** BCD binary coded decimal operations. Each 4 bit nibble represents one digit of the number. Greatly reduces the total possible numbers.
 
   
-
 3. The standard interrupts (irq()) can be disabled based on if the iterrupt flag is set or not. The non maskable ones cannot be disabled.
 
   
-
 4. In C/C++ when we do: `int func(){...};` this means that the function takes unspecified number of parameteres (not 0) like in java or python. This may lead to execution of the function anyway with unknown parameters (1, 1000 or even million of them) in C and undefined behavior in C++
-
-  
 
 5. We are adding a disassembler to see the assembly instructions as instructions get executed in the compilation. We have the INSTRUCTION struct for that.
 
-  
-
 6. using a = someClass or Struct: is a new syntax for typedef. It basically creates an alias for a class or data type.
-7. ampersanda :: func means find the address of the function func in the a class.
+7. &a :: func means find the address of the function func in the a class.
 
   
 
 8. Instruction lengths are variable. Data is a byte. Addresses are 2 bytes.
 
 
-```
+```cpp
 /*
 Converts raw hex numbers such as 0x1bcd to hex strings "1bcd"
 The [] takes any environment parameters (like events in javascript)
@@ -187,7 +175,7 @@ auto hex = [](uint_32 n, uint_8 d){ //n is number to be converted-d is no. of he
 > > ### How the disassembler function works
 > > 
 > > 1. Takes two inputs: **address start and address end**: We need this because the instructions are within some range in the memory (code section)
-> > 2. We have **value** variable to store immediate values, **lo** and **hi** variables to store 2 halves of a 16 bit address: 6502 uses little endian so to put the two halves together, the address is (hi rightshift rightshift 8 || lo).
+> > 2. We have **value** variable to store immediate values, **lo** and **hi** variables to store 2 halves of a 16 bit address: 6502 uses little endian so to put the two halves together, the address is (hi >> 8 || lo).
 > > 3. The disassembler first takes the **currAddr** and sets the **lineAddr** to this
 > > 4. Create a string **sInst** = ‘$’ + hex(currAddr, 4) + “:”
 > > 5. Get opcode = bus → read(currAddr, true), currAddr++ (read 1 byte)
