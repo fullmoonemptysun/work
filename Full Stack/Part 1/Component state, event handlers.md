@@ -254,6 +254,5 @@ export default App
 
 ## Refactoring the components
 
-
-
+1. I already did this, basically destructuring and making components inline.
 
