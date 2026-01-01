@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#inste",
+                "query": "update ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,12 +74,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9e61ebaf780c84cb",
@@ -173,17 +173,17 @@
   },
   "active": "d7e1d47d15f27884",
   "lastOpenFiles": [
+    "Full Stack/Part 1/1c. Component state, event handlers.md",
     "Full Stack/Part 1/1d. A more complex state, debugging.md",
     "Full Stack/Part 1/1b. Javascript.md",
     "Full Stack/Part 1/E. Tailwind CSS & PostCSS Internals Guide.md",
-    "Full Stack/Part 1/1c. Component state, event handlers.md",
+    "Full Stack/Part 0/Part 0 Complete.md",
     "Full Stack/Part 1/1a. Introduction to React.md",
     "NES Emulator/Part 2- The CPU/CPU - A new start.md",
     "NES Emulator/Part 2- The CPU/Part 2- The CPU.md",
     "NES Emulator/NES Emulator.md",
     "NES Emulator/Part 1- Overview/Part 1- Overview.md",
     "Pasted image 20251219125830.png",
-    "Full Stack/Part 0/Part 0 Complete.md",
     "Full Stack/Part 1",
     "Full Stack/Part 0",
     "Pasted image 20251216164023.png",
