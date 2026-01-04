@@ -39,3 +39,9 @@ if(cycles == 0){
 	
 }
 ```
+
+I decided that i will implement all of this myself. 
+
+
+1. Why do we need clock? or cycles? what is their purpose?
+	A: To synchronize all the components of the computer with the processor. If we did not have a clock or its cycles, signals would arrive at different components at different times.
