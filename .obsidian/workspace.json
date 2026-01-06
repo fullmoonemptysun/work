@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "eadacfb26bfa1cf2",
+        "id": "b4192618d81a337c",
         "type": "tabs",
         "children": [
           {
-            "id": "d7e1d47d15f27884",
+            "id": "50d5b5076dbef4da",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Full Stack/Part 2/Rendering a collection, Modules.md",
+                "file": "SYSTEMS MASTER/CSAPP/Chapter 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rendering a collection, Modules"
+              "title": "Chapter 1"
             }
           }
         ]
@@ -170,12 +170,28 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d7e1d47d15f27884",
+  "active": "50d5b5076dbef4da",
   "lastOpenFiles": [
+    "SYSTEMS MASTER/CSAPP/Chapter 1.md",
+    "Pasted image 20260105201725.png",
+    "Pasted image 20260105201705.png",
+    "Pasted image 20260105194711.png",
+    "Pasted image 20260105194227.png",
+    "Pasted image 20260105192118.png",
+    "Pasted image 20260105191335.png",
+    "NES Emulator/Part 2- The CPU/CPU - A n start.md",
+    "Operating Systems and Kernels/Chapter 1.md",
+    "Operating Systems and Kernels/Chapter 2.md",
+    "Operating Systems and Kernels/Process loading and translation summary.md",
+    "Operating Systems and Kernels/Operating Systems and Kernels.md",
+    "SYSTEMS MASTER/CSAPP/Part 1.md",
+    "Pasted image 20260105184300.png",
+    "Pasted image 20260105184204.png",
+    "SYSTEMS MASTER/heheOS/OS 0 to 1.md",
+    "SYSTEMS MASTER/heheOS/Bootsequence.md",
+    "Full Stack/Part 2/Rendering a collection, Modules.md",
     "Pasted image 20260104074620.png",
     "Full Stack/Part 1/1d. A more complex state, debugging.md",
-    "Full Stack/Part 2/Rendering a collection, Modules.md",
-    "NES Emulator/Part 2- The CPU/CPU - A n start.md",
     "Full Stack/Part 2",
     "NES Emulator/Part 2- The CPU/Part 2- The CPU.md",
     "Full Stack/Part 1/1c. Component state, event handlers.md",
@@ -188,34 +204,17 @@
     "Pasted image 20251219125830.png",
     "Full Stack/Part 1",
     "Full Stack/Part 0",
-    "Pasted image 20251216164023.png",
-    "Pasted image 20251216163419.png",
-    "Pasted image 20251216024136.png",
-    "Pasted image 20251216020325.png",
     "Systems Security/PREREQs/COMPUTING 101.md",
     "Research-VIRTIOBottleneck/KVM QEMU and Virtualization.md",
     "Research-VIRTIOBottleneck/Hypervisors and Virtualization.md",
-    "SYSTEMS MASTER/CSAPP/Chapter 1.md",
-    "Pasted image 20251118140050.png",
-    "Pasted image 20251118115722.png",
-    "SYSTEMS MASTER/CSAPP/Part 1.md",
     "Luminous Rehab/System Design/Phases.md",
     "Full Stack",
     "Research-VIRTIOBottleneck/VirtIO.md",
     "Luminous Rehab/System Design",
     "Luminous Rehab",
     "SYSTEMS MASTER/ccompiler/Day 1.md",
-    "Pasted image 20250621003825.png",
-    "Pasted image 20251003001343.png",
-    "Pasted image 20251002220607.png",
-    "Systems Security/Reverse Engineering.md",
     "SYSTEMS MASTER/CSAPP",
     "SYSTEMS MASTER",
-    "Computer Networks/Chapter 1.md",
-    "JavaScript/Javascript.md",
-    "OSS Kernel/Makefiles.md",
-    "OSS Kernel/Linux Kernel Sources.md",
-    "OSS Kernel/Kselftests.md",
     "JavaScript",
     "Systems Security/PREREQs"
   ]

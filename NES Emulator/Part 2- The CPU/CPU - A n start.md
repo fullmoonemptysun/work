@@ -28,6 +28,7 @@ Basically, & in the table is not reference. It is the address of operator. It ba
    ```
 
 4. The clock function looks like this:
+	(currently)
 ```cpp
 if(cycles == 0){
 	opcode = read(pc)
@@ -109,7 +110,7 @@ bool negative = getFlag(N);
 
 **Step 1** : CPU grabs the opcode byte at PC (The clock function has some relevant logic to implement this. look at it later.)
 **Step 2:** The corresponding `baseInstruction()` function is called immediately using the Instruction struct
-**Step 3:** This `baseInstruction()` in turn calls the `addrMode()` function or the fetch() function depending upon the type of operand it is working on (decided by addrMode). For all 16 bit operands the addrMode() handles all the logic, while for all 8 bit operands, `fetch` is the intermediate function that is called and puts the final 8 bit value into the fetched `variable`
+**Step 3:** This `baseInstruction()` in turn calls the `addrMode()` function or the `fetch()` function depending upon the type of operand it is working on (decided by addrMode). For all 16 bit operands the addrMode() handles all the logic, while for all 8 bit operands, `fetch` is the intermediate function that is called and puts the final 8 bit value into the fetched `variable`
 
 >[!important] addrMode function reference:
 imm = #$00  
