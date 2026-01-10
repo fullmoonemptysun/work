@@ -40,7 +40,7 @@
 	- Heap: The code and data areas are followed immediately by the Heap. Can grow and shrink because of C `malloc/free` calls.
 	- Shared libraries: Near the middle. Code and data for shared libraries such as the C stdlib. A difficult concept. More in chapter 7.
 	- Stack: Above Shared library region, we have the user stack. Grows downwards, grows/shrinks dynamically.
-	- and Finally, Kernel VA: This always stays in an address space and user level processes cannot read/write data or call any functions from this region.
+	- and Finally, Kernel VA: This always stays in all address space and user level processes cannot read/write data or call any functions from this region.
 
 
 - Sophisticated translation of these Virtual addresses to actual physical addresses is done by the OS. Idea is to store data in disk and use the main memory as cache.
