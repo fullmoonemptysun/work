@@ -108,9 +108,10 @@ bool negative = getFlag(N);
 
 ## My mental flow of how instructions will be executed:
 
-**Step 1** : CPU grabs the opcode byte at PC (The clock function has some relevant logic to implement this. look at it later.)
+Clock() function is called from outside and represents a tick. Everytime it is called teh cycle variable is decreased by 1. Everytime the Cycle variable reaches = 0,
+**Step 1** : CPU grabs the opcode byte at PC.
 **Step 2:** The corresponding `baseInstruction()` function is called immediately using the Instruction struct
-**Step 3:** This `baseInstruction()` in turn calls the `addrMode()` function or the `fetch()` function depending upon the type of operand it is working on (decided by addrMode). For all 16 bit operands the addrMode() handles all the logic, while for all 8 bit operands, `fetch` is the intermediate function that is called and puts the final 8 bit value into the fetched `variable`
+**Step 3:** This `baseInstruction()` in turn calls the `addrMode()` function which handles the inner workings of operand retrieval, etc. depending upon the type of operand it is working on (decided by addrMode). For all 16 bit operands the addrMode() handles all the logic, while for all 8 bit operands, `fetch` is the intermediate function that is called and puts the final 8 bit value into the fetched `variable`
 
 >[!important] addrMode function reference:
 imm = #$00  
