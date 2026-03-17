@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Full Stack/Part 2/2c. Getting data from the server.md",
+                "file": "Full Stack/Part 2/2d. Altering Data on Server.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2c. Getting data from the server"
+              "title": "2d. Altering Data on Server"
             }
           }
         ]
@@ -172,12 +172,14 @@
   },
   "active": "50d5b5076dbef4da",
   "lastOpenFiles": [
-    "Full Stack/JavaScript Notes.md",
     "Full Stack/Part 2/2c. Getting data from the server.md",
-    "Full Stack/Part 1/Shadcn, making things look good.md",
-    "Full Stack/Part 2/2b. Forms.md",
-    "Full Stack/Part 2/Untitled",
+    "Full Stack/Part 2/2d. Altering Data on Server.md",
     "Full Stack/Part 2/2a. Rendering a collection, Modules.md",
+    "Full Stack/Part 2/2b. Forms.md",
+    "Pasted image 20260310025131.png",
+    "Full Stack/JavaScript Notes.md",
+    "Full Stack/Part 1/Shadcn, making things look good.md",
+    "Full Stack/Part 2/Untitled",
     "DF/Intro - Disks, Forensics, Tools Concepts, Misc..md",
     "DF/Module 1",
     "NES Emulator/Part 2- The CPU/CPU - A n start.md",
@@ -204,7 +206,6 @@
     "SYSTEMS MASTER/CSAPP/Part 1.md",
     "Pasted image 20260105201725.png",
     "Pasted image 20260105201705.png",
-    "Pasted image 20260105194711.png",
     "Operating Systems and Kernels/Chapter 1.md",
     "Operating Systems and Kernels/Chapter 2.md",
     "Operating Systems and Kernels/Process loading and translation summary.md",
@@ -215,7 +216,6 @@
     "Full Stack/Part 1/1d. A more complex state, debugging.md",
     "Full Stack/Part 2",
     "Full Stack/Part 1/1c. Component state, event handlers.md",
-    "Full Stack/Part 1/1b. Javascript.md",
     "Full Stack/Part 1",
     "Full Stack/Part 0"
   ]
