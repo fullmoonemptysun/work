@@ -1,5 +1,0 @@
-  
-
-[[SYLLABUS INFORMATION]]
-
-[[MODULE 1]]

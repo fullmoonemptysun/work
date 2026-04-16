@@ -1,1 +1,0 @@
-![[16_(Devices_SSDs_drivers_and_blocks).pdf]]
