@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "583af57cad3fd31a",
+        "id": "a0be37e0e5c85e85",
         "type": "tabs",
         "children": [
           {
-            "id": "a89d6c1f5727c22b",
+            "id": "63ff24a5eb118d4d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Full Stack/Part 3/3a. Node.js and Express.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "3a. Node.js and Express"
             }
           }
         ]
@@ -166,8 +170,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "b3de7fd93bf86786",
+  "active": "63ff24a5eb118d4d",
   "lastOpenFiles": [
+    "Full Stack/Projects/CollabCode/useImperativeHandle.md",
+    "Full Stack/Projects/CollabCode/Workers in javascript and Monaco Editor notes..md",
+    "Full Stack/Part 3/3a. Node.js and Express.md",
+    "Full Stack/What does listening entail on the low level.md",
     "TECH INTERVIEW PREP CODE/Unit 1 Arrays and Strings/Unit 1 Arrays and Strings.md",
     "TECH INTERVIEW PREP CODE/Striver's Sheet/STL.md",
     "TECH INTERVIEW PREP CODE/Striver's Sheet/Initial Patterns.md",
@@ -200,10 +208,6 @@
     "SYSTEMS MASTER/CSAPP",
     "SPRING 2025/CSE 355- Intro to Theoretical CompSci/Automata Theory (Computability)/Lecture 4-/Lecture 4-.md",
     "SPRING 2025/CSE 355- Intro to Theoretical CompSci/Automata Theory (Computability)/Lecture 3- FAs to Regex, non regular languages, CFGs/Lecture 3- FAs to Regex, non regular languages, CFGs.md",
-    "SPRING 2025/CSE 355- Intro to Theoretical CompSci/Automata Theory (Computability)/Lecture 2-  NFAs, Closure, REGEX to FAs/Lecture 2-  NFAs, Closure, REGEX to FAs.md",
-    "SPRING 2025/CSE 355- Intro to Theoretical CompSci/Automata Theory (Computability)/Lecture 1- FSA, REGEX/Lecture 1- FSA, REGEX.md",
-    "SPRING 2025/CSE 445- Distributed Software Development/Module 2/Module 2.md",
-    "SPRING 2025/CSE 445- Distributed Software Development/Module 1- Software Architecture and Design/Module 1- Software Architecture and Design.md",
     "Pasted image 20260413162611.png",
     "Pasted image 20260413151358.png",
     "Pasted image 20260409224436.png",
