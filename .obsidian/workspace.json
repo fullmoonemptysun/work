@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Full Stack/Part 3/3a. Node.js and Express.md",
+                "file": "Computer Forensics/Topic 10 Web forensics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3a. Node.js and Express"
+              "title": "Topic 10 Web forensics"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9e61ebaf780c84cb",
@@ -172,9 +173,28 @@
   },
   "active": "63ff24a5eb118d4d",
   "lastOpenFiles": [
+    "Pasted image 20260505023159.png",
+    "Pasted image 20260505021124.png",
+    "Computer Forensics/Topic 9 Cloud Forensics.md",
+    "Computer Forensics/Topic 10 Web forensics.md",
+    "Pasted image 20260505003206.png",
+    "Computer Forensics/Topic 8 Email Forensics.md",
+    "Pasted image 20260504171443.png",
+    "Pasted image 20260504171141.png",
+    "Pasted image 20260504164934.png",
+    "Computer Forensics/Topic 7 Mobile Forensics.md",
+    "Pasted image 20260504152021.png",
+    "Computer Forensics/Topic 6 Network Forensics.md",
+    "Pasted image 20260504010646.png",
+    "Computer Forensics/Topic 5, Image forensics.md",
+    "Full Stack/Part 3/3c. Saving Data to MongoDB.md",
+    "Computer Forensics",
+    "Full Stack/Part 3/3b. Deploying app to internet.md",
+    "Full Stack/Part 3/3a. Node.js and Express.md",
+    "Pasted image 20260420155318.png",
+    "Pasted image 20260420154835.png",
     "Full Stack/Projects/CollabCode/useImperativeHandle.md",
     "Full Stack/Projects/CollabCode/Workers in javascript and Monaco Editor notes..md",
-    "Full Stack/Part 3/3a. Node.js and Express.md",
     "Full Stack/What does listening entail on the low level.md",
     "TECH INTERVIEW PREP CODE/Unit 1 Arrays and Strings/Unit 1 Arrays and Strings.md",
     "TECH INTERVIEW PREP CODE/Striver's Sheet/STL.md",
@@ -195,28 +215,9 @@
     "Systems Security/Reverse Engineering.md",
     "Systems Security/PREREQs",
     "Systems Security",
-    "System Design/02 Scale from 0 to millions.md",
     "System Design",
-    "SYSTEMS MASTER/heheOS/OS 0 to 1.md",
-    "SYSTEMS MASTER/heheOS/Bootsequence.md",
-    "SYSTEMS MASTER/ccompiler/Day 1.md",
-    "SYSTEMS MASTER/CSAPP/Part 1.md",
-    "SYSTEMS MASTER/CSAPP/Chapter 2 Representing and Manipulating info.md",
-    "SYSTEMS MASTER/CSAPP/Chapter 1.md",
     "SYSTEMS MASTER/heheOS",
     "SYSTEMS MASTER/ccompiler",
-    "SYSTEMS MASTER/CSAPP",
-    "SPRING 2025/CSE 355- Intro to Theoretical CompSci/Automata Theory (Computability)/Lecture 4-/Lecture 4-.md",
-    "SPRING 2025/CSE 355- Intro to Theoretical CompSci/Automata Theory (Computability)/Lecture 3- FAs to Regex, non regular languages, CFGs/Lecture 3- FAs to Regex, non regular languages, CFGs.md",
-    "Pasted image 20260413162611.png",
-    "Pasted image 20260413151358.png",
-    "Pasted image 20260409224436.png",
-    "Pasted image 20260310025131.png",
-    "Pasted image 20260216194949.png",
-    "Pasted image 20260216194531.png",
-    "Pasted image 20260215201912.png",
-    "Pasted image 20260215201225.png",
-    "Pasted image 20260215201154.png",
-    "Pasted image 20260109211447.png"
+    "Pasted image 20260413162611.png"
   ]
 }
