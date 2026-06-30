@@ -60,3 +60,50 @@ Forensic artifacts:
 - Stores web resources temporarily to reduce server lag. 
 - Browser requests something -> checks if cache has it and if it is fresh.
 - Cache stores resources until they expire or get updated on the server.
+- Components:
+	- Cache-control headers
+	- Expires headers: Legacy method for defining resource lifetime
+	- ETags: Validators to ensure resource freshness. 
+
+
+
+## Artifact Locations
+`C:\Users\<User>\AppData\ or %USERPROFILE%\AppData\`
+Local -> Cache, temporary data
+Roaming -> Sync-related data
+
+- Use sqlite databases and use json files
+
+## how is the data stored
+- index.dat: IE 9/earlier an explorer
+	- Structured "MS IE Cache file format"
+	- record of accessed URLs, including search queries, web mail accesses, cache, cookies and etc.
+
+- WebCacheV01.dat: Win 10/8, IE 11/10/8
+	- indexing functions are being implemented within a Microsoft database system.
+	- + counters.dat, container.dat, suggestedsites.dat
+	- C:\Users\username\AppData\Local\Microsoft\Windows\WebCache
+
+
+- spartan.edb: Microsoft Edge (not in windows 11)
+
+
+
+
+Web browser artifacts:
+	- Physical dumps of mobile devices
+	- File systems of mobile devices
+	- Backups of mobile devices
+	- Data, which can be extracted from Clouds.
+	- Hard drives.
+	- Images of hard drives
+	- memory dumps.
+	- hibernation and page files
+
+
+
+## Fiddler web debugger
+
+![[Pasted image 20260505025915.png]]
+
+## Autopsy

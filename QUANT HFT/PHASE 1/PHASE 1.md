@@ -1,3 +1,0 @@
-[[CPP DEEP DIVE]]
-
-[[MATH]]

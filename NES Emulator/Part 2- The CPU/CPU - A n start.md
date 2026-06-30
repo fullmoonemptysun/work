@@ -57,7 +57,7 @@ I decided that i will implement all of this myself.
 
 | Abbr  | **Addressing mode** | **Formula**                                               | **What it does**                                                                                                                                                                                                                                            | **Cycles** |
 | ----- | ------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| d,x   | Zero page indexed   | Peek((arg + X) % 256)                                     | all addresses are withing the 00 - FF range and so form an index inside the 0 page (the first page) which is 256 bytes in 6502. This provides faster access since address is only 8 bits instead of 16                                                      | 4          |
+| d,x   | Zero page indexed   | Peek((arg + X) % 256)                                     | all addresses are within the 00 - FF range and so form an index inside the 0 page (the first page) which is 256 bytes in 6502. This provides faster access since address is only 8 bits instead of 16                                                       | 4          |
 | d,y   | Zero page indexed   | Peek((arg + Y) % 256)                                     | Same as above but with Y register                                                                                                                                                                                                                           | 4          |
 | a,x   | Absolute indexed    | Peek(arg + X)                                             | Simply add register X's value to the provided number to get the final address.                                                                                                                                                                              | 4+         |
 | a,y   | Abs indexed         | Peek(arg + Y)                                             | Same as above but with Reg. Y                                                                                                                                                                                                                               | 4+         |
@@ -125,3 +125,9 @@ abx = $0000,X
 aby = $0000,Y  
 ind = ($0000)  
 rel = $0000 (PC-relative)
+
+
+
+- Addrmode functions should only return the respective address to read from/write to. Not perform data read at the address. (`addr_main`) is the variable where the address will be stored by the addrmode functions to be used later by the respective operate functions. (they can still read/write if the memory contents are actually address bytes)
+
+- 
