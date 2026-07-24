@@ -130,4 +130,16 @@ rel = $0000 (PC-relative)
 
 - Addrmode functions should only return the respective address to read from/write to. Not perform data read at the address. (`addr_main`) is the variable where the address will be stored by the addrmode functions to be used later by the respective operate functions. (they can still read/write if the memory contents are actually address bytes)
 
-- 
+- stkpointer register is 8 bits only because stack is defined by page 1 of the memory ($01). so this remains the highbyte the whole time. 
+
+- There are actually 2 buses in the NES. One for the CPU to the cartridge and one for the PPU to the cartridge. 
+
+- There are many types of mappers I decided to go with 000 (NROM - 128/256) for starters. Should support most early games. 
+
+- For mirroring regions look at masking to roll back to original region. 
+
+
+
+- Unfortunately, because of a CPU bug, if this 2-byte variable has an address ending in $FF and thus crosses a page, then the CPU fails to increment the page when reading the second byte and thus reads the wrong address. For example, JMP ($03FF) reads $03FF and _$0300_ instead of $0400. This must be reflected in accurate emulation.
+
+
