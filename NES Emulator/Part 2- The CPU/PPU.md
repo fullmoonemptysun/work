@@ -59,3 +59,51 @@ cpu.clock();
 [A Visible Glitch](https://www.nesdev.org/wiki/PPU_registers#:~:text=backdrop%20override.-,Bit%200%20race%20condition,-Be%20careful%20when) that happens because of certain CPU-PPU alignments and timing edge cases, causes some visual bugs in some games. I will not emulate this behavior (atleast, not as of right now.)
 
 
+## Scrolling
+There are some internal registers:
+`x`, `v`, `t`
+
+Imagine one screen as a "camera". This camera can be moved anywhere in the 2d space within the 4 nametables. 
+Scanlines and dots only take care of the counts for the current frame. They do not track position through the different screens. To track position we have scrolling. 
+
+Mainly 5 components:
+- nametable bits: which nametable is current tile in
+- coarse_x: How many tiles has the camera moved horizontally from original position (original NN bits set by cpu in ppctrl)
+- coarse_y: same as above but vertically.
+- fine_x: how many pixels has the camera move within the coarse_x tile horizontally (pixel level detail)
+- fine_y: how many pixels has the camera moved within tile vertically (changes every scanline we render). 
+
+Conceptual flow:
+	- CPU sets PPUSCROLL before each frame. This ultimately sets the staging register t with the values of above variables.
+	- before rendering starts, this t value is copied into v
+	- v contains current nametable bits, coarse_X, coarse_Y, fine_y.
+	- x contains fine_x. 
+	- when we do nametable and ptable fetches we use the coarse_X and coarse_Y to get the correct tile no. from nametable. Then we use fine_y to get the right row (vertically) within the tile. 
+	- we don't take into account fine_x while grabbing the row so we grab the full 8 bits of the tile from the pattern table and load into the shift registers.
+	- Finally when we render, we use fine_x to offset into the shift registers (if camera is 3 pixels in the current tile, use bits from 12th bit of the register).
+
+**Transitions and wraparound system:**
+- At each 8 dot boundary, we increase coarse_x and check if increasing it makes it >= 32 (out of current nametable horizontally) if yes then we flip the horizontal nametable bit in v and reset coarse_x to 0. Otherwise, we just increase coarse_x by 1. 
+- At dot 256 we also increment fine_y and then check if it is flowing over 7 (vertical tile boundary) if that happense, it is reset to 0 and coarse_y is incremented by 1 then if coarse_y is out of the 0-29 range (vertically over current nametable)  we flip vertical nametable bit in v and reset coarse_y to 0 also.
+- At dot 257 (after rendering, we have to set v = t (only coarse_X and horizontal nametable bits) again to bring the rendering back to where it was horizontally). 
+
+
+
+- The documentation says:
+> *"The PPU uses the current VRAM address for both reading and writing PPU memory thru $2007, and for fetching nametable data to draw the background. As it's drawing the background, it updates the address to point to the nametable data currently being drawn. Bits 10-11 hold the base address of the nametable minus $2000. Bits 12-14 are the Y offset of a scanline within a tile."*
+
+When it says current VRAM address for nametable fetches, it may sound confusing but if we really think about it, what are VRAM addresses? they are a combination of nametable bits, coarse_x, coarse_y. They're addresses into the nametables. When the CPU uses it outside of rendering however, v and t become general purpose addressing registers into the full PPU address space by the CPU. 
+
+The 15 bit registers _t_ and _v_ are composed this way during rendering:
+
+```
+yyy NN YYYYY XXXXX
+||| || ||||| +++++-- coarse X scroll
+||| || +++++-------- coarse Y scroll
+||| ++-------------- nametable select
++++----------------- fine Y scroll
+```
+
+
+
+
