@@ -105,5 +105,22 @@ yyy NN YYYYY XXXXX
 ```
 
 
+## Rendering current dot
+
+### Background pixel
+5 bits total
+2 from pattern high and low
+2 from attribute high and low
+1 from mux (sprite 1, bg 0)
+`S AA PP`
+
+then the flow is: palette RAM ($3F00-$3F1F) stores a 6-bit index (0-63) → that index looks up into your 64-color master palette array → _that_ gives you the actual RGB to put on screen. Two levels of indirection between "what the game writes" and "what pixel color appears."
+
+
+
+
+## SDL2 Notes
+
+
 
 
