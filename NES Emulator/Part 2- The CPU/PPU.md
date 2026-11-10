@@ -14,7 +14,7 @@
 
 - Store tiles for the background of 1 screen (256 x 240 pixels). 
 
-The NES screen can scroll. To scroll smoothly, the PPU needs more than one screen's worth of background data — so it has 4 logical nametable slots arranged in a 2x2 grid (two screens wide, two screens tall). This gives you a larger "world" to scroll around in.
+The NES screen can scroll. To scroll smoothly, the PPU needs more than one screen's worth of background data: so it has 4 logical nametable slots arranged in a 2x2 grid (two screens wide, two screens tall). This gives you a larger "world" to scroll around in.
 
 But the NES only has enough physical RAM (CIRAM) for 2 nametables, not 4. So two of the four logical slots have to be mirrors of the other two. Which ones mirror which depends on the game's scrolling direction:
 
@@ -40,7 +40,7 @@ That's all it's saying. For NROM you just need to implement one of these two mir
 
 
 ## Note on timing
-In the actual hardware, cpu and ppu tick almost at the same time but in serialization of this in software it is not possible to do this accurately for me at the time of writing. 
+In the actual hardware, cpu and ppu tick almost at the same time but in serialization of this in software it is not possible to do this accurately for me at the time of writing due to time constraints.
 
 An educated guess is that most NROM games will not depend on these bleeding edge timing cases and if they are encountered, i will implement edge case handling for those situations specifically (change the order of ticks accordingly). 
 
@@ -97,7 +97,7 @@ When it says current VRAM address for nametable fetches, it may sound confusing 
 The 15 bit registers _t_ and _v_ are composed this way during rendering:
 
 ```
-yyy NN YYYYY XXXXX
+__ yyy NN YYYYY XXXXX
 ||| || ||||| +++++-- coarse X scroll
 ||| || +++++-------- coarse Y scroll
 ||| ++-------------- nametable select
@@ -116,10 +116,20 @@ yyy NN YYYYY XXXXX
 
 then the flow is: palette RAM ($3F00-$3F1F) stores a 6-bit index (0-63) → that index looks up into your 64-color master palette array → _that_ gives you the actual RGB to put on screen. Two levels of indirection between "what the game writes" and "what pixel color appears."
 
+## Accessing PPUDATA during rendering
+Technically possible.  But is an edge case that some tricky-to-emulate games use. Emulation of this is straightforward, but I will not implement at this time (or ever).
 
 
 
 ## SDL2 Notes
+
+- We draw on a SDL_Surface object and then call `SDL_UpdateWindowSurface(win)` to update the graphics onto the actual window. 
+
+**Surfaces (software rendering)**  
+A surface is just a block of memory holding pixel data:  literally an array of RGB values, one per pixel. When you draw to a surface, the _CPU_ does the work: it calculates what color each pixel should be and writes it directly into that memory block, pixel by pixel. To get it on screen, SDL eventually copies that memory into the window. It's simple and predictable, but slow for anything complex or fast-moving, because your CPU is doing all the pixel math.
+
+**Renderer + Textures (GPU rendering)**  
+A texture is pixel data that lives in _GPU_ memory instead of regular RAM. A renderer is your handle to the GPU's drawing pipeline. When you call `SDL_RenderCopy`, you're not asking the CPU to push pixels: you're telling the graphics card "draw this texture here," and the GPU (which is built for exactly this kind of parallel pixel-pushing) does it, fast. This is why games and anything with real-time animation use this path.
 
 
 

@@ -4,7 +4,7 @@
 
 2. Each I/O device is connected to the I/O bus by either a controller or an adapter.The distinction between the two is mainly one of packaging. Controllers are chip sets in the device itself or on the system’s main printed circuit board (often called the motherboard). An adapter is a card that plugs into a slot on the motherboard. Regardless, the purpose of each is to transfer information back and forth between the I/O bus and an I/O device.
 
-3. L1 cache is smaller and faster than L2 and L3 (they are just smaller memory components closer to the cpu) implemented using SRAM technologies.
+3. L1 cache is smaller and faster than L2 and L3 (they are just smaller memory components closer to the cpu) implemented using **SRAM** technologies.
 
 ![[Pasted image 20251118140050.png]]
 

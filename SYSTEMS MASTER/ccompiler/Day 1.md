@@ -1,4 +1,4 @@
-1. Assemblers are written in C currently. But how is that possible when they are the ones assembling C programs? Remember historical ladder. 
+*1. Assemblers are written in C currently. But how is that possible when they are the ones assembling C programs? Remember historical ladder. 
 
 > *"there was once, a binary assembler which assembled a an assembler written in assembly then that assembler assembled one written in C and now this one assembles other programs in C"*
 

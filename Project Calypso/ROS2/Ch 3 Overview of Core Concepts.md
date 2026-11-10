@@ -17,8 +17,6 @@ What can we get from those two experiments? As you can see, a ROS 2 node can be 
 	Hardware drivers and more
 A node, on top of being a computer program, also benefits from the ROS 2 functionalities: logs, communication with other nodes, and other features we will discover throughout this book.
 
-
-
 ## Topics
 
 How nodes communicate with each other: Topics, services, actions.
