@@ -7,11 +7,8 @@
 colcon is the build tool for Ros2 comes with `ros2-dev-tools`
 
 `build` will contain intermediate files required for the overall build, logs will contain build logs and install contains the final built nodes.
-
 ## Sourcing the workspace
 `source path/to/directory/install/setup.bash` in the bashrc file
-
-
 ## Creating a package
 - Package is an independent unit of a robot (Camera, Vision, Motion planning, Hardware control)
 

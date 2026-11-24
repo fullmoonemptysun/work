@@ -225,8 +225,6 @@ endif()
 
 So altogether: "If the VS Code Pico extension has installed its helper config file, load it." If it doesn't exist (e.g., you're not using that VS Code extension), this whole block silently does nothing — which is why it's safe to leave in even if you don't use VS Code.
 
-cmake
-
 ```cmake
 set(PICO_BOARD pico CACHE STRING "Board type")
 ```
